@@ -35,6 +35,9 @@ void substringPrinter(char str[]){
         if(i >= j){
             printf("\nInvalido! O primeiro numero deve ser maior do que o segundo!\n\n");
         }
+        if(i > 256 || j > 256){
+            printf("\nInvalido! Alvos fora da string!\n\n");
+        }
     }while(i >= j);
 
     printf("\n\t");
