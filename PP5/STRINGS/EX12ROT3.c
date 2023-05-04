@@ -41,6 +41,7 @@ void ROTX(char str[], int rot){ //rot é o número de rotações que o algoritmo
                 str[i] += 3;
             }
             if(test && str[i] > 90) str[i] -= 26;   //ajuste feito para que haja "overflow" de Z -> A;
+            if(test && str[i] < 65) str[i] += 26;   //ajuste feito para que haja "underflow" de A -> Z;
         }
 
     
