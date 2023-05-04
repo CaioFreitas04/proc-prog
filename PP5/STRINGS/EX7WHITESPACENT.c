@@ -44,10 +44,16 @@ void WSRemover(char str[]){
     for(i = 0; ; i++){
         if(str[i] == '\0') break;   //o loop so para quando alcançar o '\0';
         else{
-            if(WSDetector(str[i])) continue;
-            else printf("%c", str[i]);  //impressão dos caracteres não brancos;
+            if(WSDetector(str[i])){
+                do{                 //essa parte do loop foi roubada do LAB5_S_EX13PALINDROME;
+                    for(j = i; j < 100; j++){
+                        str[j] = str[j + 1];
+                    }
+                }while(WSDetector(str[i]));
+            }
         }
     }
-
+    printf("%s", str);
+    
     return;
 }
