@@ -12,11 +12,11 @@ typedef struct aluno{
 int main(){
     //var. ent é o vetor de entrada, apr são os aprovados, e rep são os !aprovados;
     //apCount e repCount contam quantos alunos foram aprovados e quantos foram !aprovados;
-    aln ent[3], apr[3], rep[3];
+    aln ent[10], apr[10], rep[10];
     int i, j, apCount = 0, repCount = 0;
 
     printf("\tREGISTRO DE APROVACAO\n\n");
-    for(i = 0; i < 3; i++){                                 //coletando dados;
+    for(i = 0; i < 10; i++){                                 //coletando dados;
         printf("Insira o nome do %do aluno.\n>> ", i+1);
         setbuf(stdin, NULL);
         fgets(ent[i].nom, 256, stdin);
@@ -37,7 +37,7 @@ int main(){
     }
 
     //testando se um aluno foi aprovado ou reprovado;
-    for(i = 0; i < 3; i++){
+    for(i = 0; i < 10; i++){
         if(ent[i].med >= 5.0){
             strcpy(apr[apCount].nom, ent[i].nom);
             strcpy(apr[apCount].mat, ent[i].mat);
