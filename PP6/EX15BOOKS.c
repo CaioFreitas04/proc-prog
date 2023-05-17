@@ -72,8 +72,8 @@ int main(){
 
 int substringVer(char sub[], char S[]){
 
-    //var. chk é uma flag que serve para averiguar se as strings são iguais. temp é uma string temporária;
-    int i, j, k = 0, chk = 0;
+    //var. temp é uma string temporária;
+    int i, j, k = 0;
     char temp[32];
 
     //loop principal: testa cada caracter de S;
