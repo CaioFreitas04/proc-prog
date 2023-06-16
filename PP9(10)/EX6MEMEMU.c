@@ -78,9 +78,12 @@ void readSlot(int *MEM, int memsize){
     scanf("%d", &slot);
     if(slot < 0 || slot >= memsize){
         printf("\tERR: FORA_DE_MEMORIA\n\n");
+        system("pause");
         return;
     }
     else printf("\n\tADD %d: %d\n", slot, MEM[slot]);
+    system("pause");
+    return;
 }
 
 void writeSlot(int *MEM, int memsize){
@@ -91,9 +94,11 @@ void writeSlot(int *MEM, int memsize){
     scanf("%d%d", &slot, &val);
     if(slot < 0 || slot >= memsize){
         printf("\tERR: FORA_DE_MEMORIA\n\n");
+        system("pause");
         return;
     }
     else MEM[slot] = val;
     printf("\n\tADD %d <- %d\n", slot, val);
+    system("pause");
     return;
 }
