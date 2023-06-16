@@ -6,11 +6,25 @@
 int main(){
 
     //var;
-    int ticket[6] = {0, 0, 0, 0, 0, 0}, luckynums[6], *correct, N, i, j, check = 0;
+    int ticket[6] = {0, 0, 0, 0, 0, 0}, luckynums[6] = {0, 0, 0, 0, 0, 0}, *correct, N, i, j, check = 0;
 
     //gerando números de 1-60 para fazer o sorteio;
+    srand(time(NULL));
+
+    //esse loop garante que os números sorteados não terão repetições;
     for(i = 0; i < 6; i++){
-        luckynums[i] = (rand() % 60) + 1;
+        while(1){
+            check = 1;
+            luckynums[i] = (rand() % 60) + 1;
+            for(j = 0; j < 6; j++){
+                if(i == j) continue;
+                if(luckynums[i] == luckynums[j]){
+                    check = 0;
+                    break;
+                }
+            }
+            if(check) break;
+        }
     }
 
     printf("\t--LOTERIA COMPUTARIA(tm)--\n\n");
